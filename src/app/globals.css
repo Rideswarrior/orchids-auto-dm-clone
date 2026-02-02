@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-background: #ffffff;
+  --color-foreground: #000000;
+
+  --color-card: #ffffff;
+  --color-card-foreground: #000000;
+
+  --color-popover: #ffffff;
+  --color-popover-foreground: #000000;
+
+  --color-primary: #0056e0;
+  --color-primary-foreground: #ffffff;
+
+  --color-secondary: #f7f9fc;
+  --color-secondary-foreground: #0056e0;
+
+  --color-muted: #f7f9fc;
+  --color-muted-foreground: #4a5568;
+
+  --color-accent: #48bb78;
+  --color-accent-foreground: #ffffff;
+
+  --color-destructive: #ef4444;
+  --color-destructive-foreground: #fafafa;
+
+  --color-border: #e2e8f0;
+  --color-input: #e2e8f0;
+  --color-ring: #0056e0;
+
+  --color-chart-1: #0056e0;
+  --color-chart-2: #48bb78;
+  --color-chart-3: #0f172a;
+  --color-chart-4: #f1c40f;
+  --color-chart-5: #e74c3c;
+
+  --color-sidebar: #ffffff;
+  --sidebar-foreground: #4a5568;
+  --sidebar-primary: #0056e0;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #f7f9fc;
+  --sidebar-accent-foreground: #0056e0;
+  --sidebar-border: #e2e8f0;
+  --sidebar-ring: #0056e0;
+
+  --color-brand-blue: #0056e0;
+  --color-brand-dark: #0f172a;
+  --color-brand-success: #48bb78;
+  --color-text-heading: #000000;
+  --color-text-body: #4a5568;
+  --color-grid-line: #e2e8f0;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Inter", sans-serif;
+
+  --radius-xl: 40px;
+  --radius-lg: 24px;
+  --radius-md: 12px;
+  --radius-sm: 8px;
+
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.05);
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+}
+
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: #e2e8f0;
+  }
+
+  :root {
+    --background: #ffffff;
+    --foreground: #000000;
+    --card: #ffffff;
+    --card-foreground: #000000;
+    --popover: #ffffff;
+    --popover-foreground: #000000;
+    --primary: #0056e0;
+    --primary-foreground: #ffffff;
+    --secondary: #f7f9fc;
+    --secondary-foreground: #0056e0;
+    --muted: #f7f9fc;
+    --muted-foreground: #4a5568;
+    --accent: #48bb78;
+    --accent-foreground: #ffffff;
+    --destructive: #ef4444;
+    --destructive-foreground: #fafafa;
+    --border: #e2e8f0;
+    --input: #e2e8f0;
+    --ring: #0056e0;
+    --radius: 1.5rem;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-text-body);
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  h1, .h1 {
+    color: var(--color-text-heading);
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 64px;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  h2, .h2 {
+    color: var(--color-text-heading);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+  }
+
+  h3, .h3 {
+    color: var(--color-text-heading);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 1.3;
+  }
+
+  p {
+    margin-bottom: 1rem;
+  }
+
+  .container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 24px;
+    padding-left: 24px;
+    max-width: 1280px;
+  }
+
+  .font-inter {
+    font-family: "Inter", sans-serif;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .bg-grid-pattern {
+    background-image: linear-gradient(var(--color-grid-line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--color-grid-line) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .glassmorphism {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+
+  .radial-glow {
+    background: radial-gradient(circle, #e0e7ff 0%, #ffffff 100%);
+  }
+
+  .btn-pill {
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+  }
+
+  .btn-pill:hover {
+    transform: scale(1.02);
+  }
+}
+
+nextjs-portal {
+  display: none !important;
+}
