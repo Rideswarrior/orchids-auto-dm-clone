@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { ChevronDown, Mail, HelpCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
+import ScrollReveal from "@/components/scroll-reveal";
 
 interface FAQItemProps {
   question: string;
@@ -50,29 +51,29 @@ export default function FAQ() {
 
   const faqs = [
     {
-      question: "Is AutoDM free?",
+      question: "Who can apply for the Hospital Administration Course?",
       answer:
-        "Yes! You can start sending unlimited DMs, for Post Replies, for free — no credit card needed. Advanced features like \"DM Automations on replies on Stories and Lives\", “Ask for a Follow to Get DM”, and \"Email capture\" are available on our paid plan.",
+        "The course is open to students, freshers, and working professionals who wish to build a strong foundation in hospital administration. No prior medical background is required. It is suitable for beginners and career-oriented learners interested in healthcare administration.",
     },
     {
-      question: "Is this tool safe to use with Instagram?",
+      question: "What is the duration of the course?",
       answer:
-        "Totally. We’re an official Meta Tech Partner, which means AutoDM is built on Instagram’s approved APIs and follows all platform guidelines. No hacks. No shadowbans.",
+        "The Hospital Administration Course follows a structured academic schedule. Please contact Edusource HRD Centre directly for the current course duration and batch details.",
     },
     {
-      question: "Do I need any tech skills to set this up?",
+      question: "Is the certification government approved?",
       answer:
-        "Nope. If you can post a reel, you can use AutoDM. Setup takes under a minute — no code, no Zapier, no confusion.",
+        "Yes. Upon successful completion, students are awarded a Government Approved Certificate, adding formal recognition and credibility to their qualification. This certification supports academic progression and enhances professional value in healthcare administration-related fields.",
     },
     {
-      question: "Can I customize the message for each post or reel?",
+      question: "What are the key subjects covered in this course?",
       answer:
-        "Yes! You can create unique DM flows for every post, story, or campaign. Personalize messages based on what your audience interacts with.",
+        "The course covers Fundamentals of Hospital Administration, Healthcare Office & Front-Desk Management, Medical Records and Documentation Practices, Hospital Ethics and Professional Conduct, Patient Coordination and Administrative Communication, and Understanding Hospital Systems and Operational Workflow.",
     },
     {
-      question: "Why AutoDM instead of tools like ManyChat?",
+      question: "Does the course guarantee job placement?",
       answer:
-        "SuperProfile gives you everything in one place — from AutoDM to email nurture to product selling — without the complexity or cost of juggling 5 different tools. Plus, it’s made specifically for creators.",
+        "The Hospital Administration course emphasizes knowledge, responsibility, and professionalism. It is designed to develop administrative competence and confidence. The true value of the course lies in skill development, certified learning, and institutional readiness. Edusource HRD Centre does not make claims related to job placement or employment guarantees.",
     },
   ];
 
@@ -81,51 +82,55 @@ export default function FAQ() {
   };
 
   return (
-    <section className="bg-[#FFFFFF] py-[120px] relative px-6 overflow-hidden">
-      {/* Container with rounded corners as seen in the screenshot background */}
+    <section className="bg-[#FFFFFF] py-[120px] relative px-6 overflow-hidden" id="faq">
       <div className="max-w-[720px] mx-auto">
-        <div className="flex flex-col items-center mb-12">
-          {/* Badge */}
-          <div className="bg-[#F7F9FC] border border-[#E2E8F0] px-3 py-1 rounded-full flex items-center gap-2 mb-6">
-            <div className="w-4 h-4 rounded-full bg-slate-800 flex items-center justify-center">
-                <HelpCircle className="w-3 h-3 text-white" />
+        <ScrollReveal>
+          <div className="flex flex-col items-center mb-12">
+            <div className="bg-[#F7F9FC] border border-[#E2E8F0] px-3 py-1 rounded-full flex items-center gap-2 mb-6">
+              <div className="w-4 h-4 rounded-full bg-slate-800 flex items-center justify-center">
+                  <HelpCircle className="w-3 h-3 text-white" />
+              </div>
+              <span className="text-[12px] font-semibold text-[#4A5568] uppercase tracking-wide">
+                Frequently Asked Questions
+              </span>
             </div>
-            <span className="text-[12px] font-semibold text-[#4A5568] uppercase tracking-wide">
-              Frequently Asked Questions
-            </span>
-          </div>
 
-          <h2 className="text-[48px] md:text-[56px] font-bold text-black text-center leading-[1.1] mb-12">
-            Questions? Answers!
-          </h2>
-        </div>
+            <h2 className="text-[48px] md:text-[56px] font-bold text-black text-center leading-[1.1] mb-12">
+              Questions? Answers!
+            </h2>
+          </div>
+        </ScrollReveal>
 
         {/* Accordion Container */}
-        <div className="bg-white rounded-[24px] shadow-[0_20px_50px_rgba(0,0,0,0.06)] border border-[#E2E8F0] p-4 md:p-6 mb-10">
-          {faqs.map((faq, index) => (
-            <FAQItem
-              key={index}
-              question={faq.question}
-              answer={faq.answer}
-              isOpen={openIndex === index}
-              onClick={() => handleToggle(index)}
-            />
-          ))}
-        </div>
+        <ScrollReveal delay={0.2}>
+          <div className="bg-white rounded-[24px] shadow-[0_20px_50px_rgba(0,0,0,0.06)] border border-[#E2E8F0] p-4 md:p-6 mb-10">
+            {faqs.map((faq, index) => (
+              <FAQItem
+                key={index}
+                question={faq.question}
+                answer={faq.answer}
+                isOpen={openIndex === index}
+                onClick={() => handleToggle(index)}
+              />
+            ))}
+          </div>
+        </ScrollReveal>
 
         {/* Support Link */}
-        <div className="flex items-center justify-center gap-2 text-[#4A5568]">
-          <Mail className="w-5 h-5" />
-          <p className="m-0 text-[16px]">
-            Feel free to mail us for any enquiries:{" "}
-            <a
-              href="mailto:care@superprofile.bio"
-              className="text-black font-semibold hover:underline transition-all"
-            >
-              care@superprofile.bio
-            </a>
-          </p>
-        </div>
+        <ScrollReveal delay={0.3}>
+          <div className="flex items-center justify-center gap-2 text-[#4A5568]">
+            <Mail className="w-5 h-5" />
+            <p className="m-0 text-[16px]">
+              For enquiries, contact us at:{" "}
+              <a
+                href="mailto:info@edusourcehrd.com"
+                className="text-black font-semibold hover:underline transition-all"
+              >
+                info@edusourcehrd.com
+              </a>
+            </p>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );

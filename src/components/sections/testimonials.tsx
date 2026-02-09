@@ -1,77 +1,35 @@
+"use client";
+
 import React from 'react';
 import Image from 'next/image';
 import { Video, Phone } from 'lucide-react';
+import ScrollReveal from '@/components/scroll-reveal';
 
 const Testimonials = () => {
-  // Testimonial data extracted from content and visuals
-  const testimonials = [
+  const studentExperiences = [
     {
-      type: 'chat',
-      sender: 'Robert Doran',
-      avatar: 'https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/2f236cae-f369-4b7e-8d1c-2883eb29a59e-superprofile-bio/assets/images/1WQ6nK9M4cCbYUQYhdex9dNxk0M-11.jpeg',
       content: [
-        { text: 'page like this Creator - https://www.instagram.com/madhvinjuneja/ (you\'ll see she\'s using SuperProfile)', isSender: true },
-        { text: 'Excellent, thanks for the clarification!! Enjoying the interface so far!!', isSender: false },
-        { text: 'Is there a feedback form you\'d like filled?', isSender: false },
-        { text: 'Appreciate it, Robert. Your words are the best feedback :)', isSender: true },
+        { text: 'The hospital administration course covers all essential aspects of healthcare management.', isSender: true },
+        { text: 'The faculty is very supportive and knowledgeable. The structured approach helped me understand hospital workflows clearly.', isSender: false },
+        { text: 'Glad to hear that! The practical modules really make a difference.', isSender: true },
       ],
-      className: 'col-span-1 row-span-1',
     },
     {
-      type: 'video',
-      src: 'https://framerusercontent.com/assets/7rwHp3uckUyhESsYnazt3kFU7M.mp4',
-      className: 'col-span-1 row-span-2 aspect-[9/16] bg-[#1a1a1a] rounded-[24px] overflow-hidden',
-    },
-    {
-      type: 'video',
-      src: 'https://framerusercontent.com/assets/7xP7j2R2k9h62MMxb1kXEB8H4MI.mp4',
-      className: 'col-span-1 row-span-2 aspect-[9/16] bg-[#1a1a1a] rounded-[24px] overflow-hidden',
-    },
-    {
-      type: 'video',
-      videoPlaceholder: true, // For the ones where assets aren't directly linked but visible in screens
-      className: 'col-span-1 row-span-2 aspect-[9/16] bg-[#2a2a2a] rounded-[24px] overflow-hidden',
-    },
-    {
-      type: 'chat',
-      sender: 'Marion Singapore',
-      avatar: 'https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/2f236cae-f369-4b7e-8d1c-2883eb29a59e-superprofile-bio/assets/images/1WQ6nK9M4cCbYUQYhdex9dNxk0M-11.jpeg',
       content: [
-        { text: 'https://superprofile.bio/explore-all-apps', isSender: true },
-        { text: 'Go to the above link and switch on AutoDM', isSender: true },
-        { text: 'got it', isSender: false },
-        { text: 'I must say until now - your customer service with WhatsApp is amazing!!', isSender: false },
-        { text: 'never seen anything alike and I appreciate it a lot', isSender: false },
+        { text: 'How is the course structured at Edusource?', isSender: true },
+        { text: 'It covers hospital operations, patient coordination, medical records, and ethics.', isSender: true },
+        { text: 'That sounds comprehensive!', isSender: false },
+        { text: 'The learning environment is professional and the faculty is very approachable.', isSender: false },
+        { text: 'I feel confident about my understanding of healthcare administration now.', isSender: false },
       ],
-      className: 'col-span-1 row-span-1',
     },
     {
-      type: 'review',
-      rating: 5,
-      text: '"One of the greatest experience ever. I found Telegram integrated feature very usefull. As it totally automates my business also the support is pretty good."',
-      author: 'Prasun B',
-      avatar: 'https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/2f236cae-f369-4b7e-8d1c-2883eb29a59e-superprofile-bio/assets/images/4rZFoXgGKTyqmEK2qSZLnMdfA-12.jpeg',
-      className: 'col-span-1 row-span-1',
-    },
-    {
-      type: 'chat',
-      sender: 'Sidhi Creator',
-      avatar: 'https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/2f236cae-f369-4b7e-8d1c-2883eb29a59e-superprofile-bio/assets/images/CXqxrKhFb62A1BXDHDfCGaaerFE-14.jpeg',
       content: [
-        { text: 'I\'ve approved your AutoDM access from my end.', isSender: true },
-        { text: 'okay thanks a lot will try now', isSender: false },
-        { text: 'You\'re most welcome!', isSender: true },
-        { text: 'Hi its an appreciation message for you all who created this automation for free I was not able to do it from any other site...', isSender: false },
+        { text: 'Welcome to Edusource HRD Centre! How can we help?', isSender: true },
+        { text: 'I wanted to know about the certification.', isSender: false },
+        { text: 'You receive a Government Approved Certificate upon completion.', isSender: true },
+        { text: 'That is wonderful! The course content and faculty guidance have been excellent throughout my learning journey.', isSender: false },
       ],
-      className: 'col-span-1 row-span-1',
-    },
-    {
-      type: 'review',
-      rating: 5,
-      text: '"SuperProfile\'s locked content feature has been a game-changer for me, enabling me to monetize my YouTube channel and grow my earnings."',
-      author: 'Kavyal Sedanni',
-      avatar: 'https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/2f236cae-f369-4b7e-8d1c-2883eb29a59e-superprofile-bio/assets/images/DNAghrq62kAwheFB0o8xkz36J9c-15.jpeg',
-      className: 'col-span-1 row-span-1',
     },
   ];
 
@@ -79,193 +37,204 @@ const Testimonials = () => {
     <section className="py-[120px] px-6 bg-white overflow-hidden" id="testimonials">
       <div className="container mx-auto max-w-[1280px]">
         {/* Header Section */}
-        <div className="text-center mb-16">
-          <h2 className="text-[48px] font-bold text-black leading-[1.2] tracking-[-0.01em] mb-4">
-            Top choice of <span className="italic font-normal text-[#4A5568]">500,000+ creators</span>
-          </h2>
-          <p className="text-[20px] text-[#4A5568] max-w-[600px] mx-auto leading-[1.6]">
-            See how we&apos;ve helped creators like you build great brands and businesses.
-          </p>
-        </div>
+        <ScrollReveal>
+          <div className="text-center mb-16">
+            <h2 className="text-[48px] font-bold text-black leading-[1.2] tracking-[-0.01em] mb-4">
+              Trusted by <span className="italic font-normal text-[#4A5568]">Students &amp; Healthcare Aspirants</span>
+            </h2>
+            <p className="text-[20px] text-[#4A5568] max-w-[600px] mx-auto leading-[1.6]">
+              Hear from our students about their learning experience at Edusource HRD Centre.
+            </p>
+          </div>
+        </ScrollReveal>
 
         {/* Masonry-style Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-max items-start">
           
           {/* Column 1 */}
           <div className="flex flex-col gap-6">
-            {/* Robert Doran Chat Card */}
-            <div className="bg-[#0f172a] rounded-[24px] p-6 shadow-soft flex flex-col gap-4">
-              <div className="flex items-center gap-3 mb-2">
-                <div className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0">
-                  <Image src={testimonials[0].avatar!} alt="Robert Doran" width={40} height={40} className="object-cover" />
-                </div>
-                <div className="flex-1">
-                  <p className="text-white font-semibold text-sm">Robert Doran</p>
-                </div>
-                <div className="flex gap-4 text-white/60">
-                  <Video className="h-4 w-4" />
-                  <Phone className="h-4 w-4" />
-                </div>
-              </div>
-              <div className="flex flex-col gap-3">
-                {testimonials[0].content?.map((msg, idx) => (
-                  <div 
-                    key={idx} 
-                    className={`max-w-[85%] rounded-[12px] p-3 text-[13px] leading-tight ${
-                      msg.isSender 
-                        ? 'bg-[#0056e0] text-white self-end rounded-tr-none' 
-                        : 'bg-[#1f2937] text-white self-start rounded-tl-none'
-                    }`}
-                  >
-                    {msg.text}
+            <ScrollReveal delay={0.1}>
+              <div className="bg-[#0f172a] rounded-[24px] p-6 shadow-soft flex flex-col gap-4">
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0">
+                    <Image src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/2f236cae-f369-4b7e-8d1c-2883eb29a59e-superprofile-bio/assets/images/1WQ6nK9M4cCbYUQYhdex9dNxk0M-11.jpeg" alt="Student" width={40} height={40} className="object-cover" />
                   </div>
-                ))}
+                  <div className="flex-1">
+                    <p className="text-white font-semibold text-sm">Anju Krishnan</p>
+                  </div>
+                  <div className="flex gap-4 text-white/60">
+                    <Video className="h-4 w-4" />
+                    <Phone className="h-4 w-4" />
+                  </div>
+                </div>
+                <div className="flex flex-col gap-3">
+                  {studentExperiences[0].content.map((msg, idx) => (
+                    <div 
+                      key={idx} 
+                      className={`max-w-[85%] rounded-[12px] p-3 text-[13px] leading-tight ${
+                        msg.isSender 
+                          ? 'bg-[#0056e0] text-white self-end rounded-tr-none' 
+                          : 'bg-[#1f2937] text-white self-start rounded-tl-none'
+                      }`}
+                    >
+                      {msg.text}
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
+            </ScrollReveal>
 
-            {/* Video 1 */}
-            <div className="rounded-[24px] overflow-hidden bg-black border border-gray-100 shadow-soft">
-              <video 
-                src="https://framerusercontent.com/assets/7rwHp3uckUyhESsYnazt3kFU7M.mp4" 
-                autoPlay 
-                muted 
-                loop 
-                playsInline
-                className="w-full h-auto"
-              />
-            </div>
+            <ScrollReveal delay={0.2}>
+              <div className="rounded-[24px] overflow-hidden bg-black border border-gray-100 shadow-soft">
+                <video 
+                  src="https://framerusercontent.com/assets/7rwHp3uckUyhESsYnazt3kFU7M.mp4" 
+                  autoPlay 
+                  muted 
+                  loop 
+                  playsInline
+                  className="w-full h-auto"
+                />
+              </div>
+            </ScrollReveal>
 
-             {/* Review 1 */}
-             <div className="bg-white border border-[#e2e8f0] rounded-[24px] p-8 shadow-soft">
+            <ScrollReveal delay={0.3}>
+              <div className="bg-white border border-[#e2e8f0] rounded-[24px] p-8 shadow-soft">
                 <div className="flex gap-1 mb-4">
                   {[...Array(5)].map((_, i) => (
-                    <span key={i} className="text-[#48bb78]">★</span>
+                    <span key={i} className="text-[#48bb78]">&#9733;</span>
                   ))}
                 </div>
                 <p className="text-[#4A5568] text-[16px] leading-[1.6] mb-6">
-                  &quot;One of the greatest experience ever. I found Telegram integrated feature very usefull. As it totally automates my business also the support is pretty good.&quot;
+                  &quot;The Hospital Administration course at Edusource gave me a thorough understanding of how hospitals function. The faculty support and structured curriculum made learning very effective.&quot;
                 </p>
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full overflow-hidden">
-                    <Image src={testimonials[5].avatar!} alt="Prasun B" width={40} height={40} className="object-cover" />
+                    <Image src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/2f236cae-f369-4b7e-8d1c-2883eb29a59e-superprofile-bio/assets/images/4rZFoXgGKTyqmEK2qSZLnMdfA-12.jpeg" alt="Rahul M" width={40} height={40} className="object-cover" />
                   </div>
-                  <span className="font-bold text-black text-[16px]">Prasun B</span>
+                  <span className="font-bold text-black text-[16px]">Rahul M</span>
                 </div>
-            </div>
+              </div>
+            </ScrollReveal>
           </div>
 
           {/* Column 2 */}
           <div className="flex flex-col gap-6">
-             {/* Large Video 2 */}
-             <div className="rounded-[24px] overflow-hidden bg-black border border-gray-100 shadow-soft">
-              <video 
-                src="https://framerusercontent.com/assets/7xP7j2R2k9h62MMxb1kXEB8H4MI.mp4" 
-                autoPlay 
-                muted 
-                loop 
-                playsInline
-                className="w-full h-auto"
-              />
-            </div>
-
-            {/* Marion Singapore Chat */}
-            <div className="bg-[#0f172a] rounded-[24px] p-6 shadow-soft flex flex-col gap-4">
-              <div className="flex items-center gap-3 mb-2">
-                <div className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0 bg-gray-600">
-                  <Image src={testimonials[4].avatar!} alt="Marion" width={40} height={40} className="object-cover" />
-                </div>
-                <div className="flex-1">
-                  <p className="text-white font-semibold text-sm">Marion Singapore</p>
-                </div>
-                <div className="flex gap-4 text-white/60">
-                   <i className="lucide-video h-4 w-4" />
-                   <i className="lucide-phone h-4 w-4" />
-                </div>
+            <ScrollReveal delay={0.15}>
+              <div className="rounded-[24px] overflow-hidden bg-black border border-gray-100 shadow-soft">
+                <video 
+                  src="https://framerusercontent.com/assets/7xP7j2R2k9h62MMxb1kXEB8H4MI.mp4" 
+                  autoPlay 
+                  muted 
+                  loop 
+                  playsInline
+                  className="w-full h-auto"
+                />
               </div>
-              <div className="flex flex-col gap-3">
-                {testimonials[4].content?.map((msg, idx) => (
-                  <div 
-                    key={idx} 
-                    className={`max-w-[85%] rounded-[12px] p-3 text-[13px] leading-tight ${
-                      msg.isSender 
-                        ? 'bg-[#0056e0] text-white self-end rounded-tr-none' 
-                        : 'bg-[#1f2937] text-white self-start rounded-tl-none'
-                    }`}
-                  >
-                    {msg.text}
+            </ScrollReveal>
+
+            <ScrollReveal delay={0.25}>
+              <div className="bg-[#0f172a] rounded-[24px] p-6 shadow-soft flex flex-col gap-4">
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0 bg-gray-600">
+                    <Image src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/2f236cae-f369-4b7e-8d1c-2883eb29a59e-superprofile-bio/assets/images/1WQ6nK9M4cCbYUQYhdex9dNxk0M-11.jpeg" alt="Student" width={40} height={40} className="object-cover" />
                   </div>
-                ))}
+                  <div className="flex-1">
+                    <p className="text-white font-semibold text-sm">Meera S</p>
+                  </div>
+                  <div className="flex gap-4 text-white/60">
+                    <Video className="h-4 w-4" />
+                    <Phone className="h-4 w-4" />
+                  </div>
+                </div>
+                <div className="flex flex-col gap-3">
+                  {studentExperiences[1].content.map((msg, idx) => (
+                    <div 
+                      key={idx} 
+                      className={`max-w-[85%] rounded-[12px] p-3 text-[13px] leading-tight ${
+                        msg.isSender 
+                          ? 'bg-[#0056e0] text-white self-end rounded-tr-none' 
+                          : 'bg-[#1f2937] text-white self-start rounded-tl-none'
+                      }`}
+                    >
+                      {msg.text}
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
+            </ScrollReveal>
 
-            {/* Video Placeholder 3 */}
-            <div className="rounded-[24px] overflow-hidden bg-[#2a2a2a] aspect-[9/13] relative shadow-soft">
-              <div className="absolute inset-0 flex items-center justify-center">
-                 <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-md">
-                   <div className="w-0 h-0 border-t-[8px] border-t-transparent border-l-[12px] border-l-white border-b-[8px] border-b-transparent ml-1" />
-                 </div>
+            <ScrollReveal delay={0.35}>
+              <div className="rounded-[24px] overflow-hidden bg-[#2a2a2a] aspect-[9/13] relative shadow-soft">
+                <div className="absolute inset-0 flex items-center justify-center">
+                   <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-md">
+                     <div className="w-0 h-0 border-t-[8px] border-t-transparent border-l-[12px] border-l-white border-b-[8px] border-b-transparent ml-1" />
+                   </div>
+                </div>
               </div>
-            </div>
+            </ScrollReveal>
           </div>
 
           {/* Column 3 */}
           <div className="flex flex-col gap-6">
-             {/* Video Placeholder 4 */}
-             <div className="rounded-[24px] overflow-hidden bg-[#1f2937] aspect-[9/11] relative shadow-soft">
-              <div className="absolute inset-0 flex items-center justify-center">
-                 <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-md">
-                   <div className="w-0 h-0 border-t-[8px] border-t-transparent border-l-[12px] border-l-white border-b-[8px] border-b-transparent ml-1" />
-                 </div>
+            <ScrollReveal delay={0.2}>
+              <div className="rounded-[24px] overflow-hidden bg-[#1f2937] aspect-[9/11] relative shadow-soft">
+                <div className="absolute inset-0 flex items-center justify-center">
+                   <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-md">
+                     <div className="w-0 h-0 border-t-[8px] border-t-transparent border-l-[12px] border-l-white border-b-[8px] border-b-transparent ml-1" />
+                   </div>
+                </div>
               </div>
-            </div>
+            </ScrollReveal>
 
-            {/* Sidhi Creator Chat */}
-            <div className="bg-[#0f172a] rounded-[24px] p-6 shadow-soft flex flex-col gap-4">
-              <div className="flex items-center gap-3 mb-2">
-                <div className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0 bg-gray-500">
-                  <Image src={testimonials[6].avatar!} alt="Sidhi" width={40} height={40} className="object-cover" />
-                </div>
-                <div className="flex-1">
-                  <p className="text-white font-semibold text-sm">Sidhi Creator</p>
-                </div>
-                <div className="flex gap-4 text-white/60">
-                   <i className="lucide-video h-4 w-4" />
-                   <i className="lucide-phone h-4 w-4" />
-                </div>
-              </div>
-              <div className="flex flex-col gap-3">
-                {testimonials[6].content?.map((msg, idx) => (
-                  <div 
-                    key={idx} 
-                    className={`max-w-[85%] rounded-[12px] p-3 text-[13px] leading-tight ${
-                      msg.isSender 
-                        ? 'bg-[#0056e0] text-white self-end rounded-tr-none' 
-                        : 'bg-[#1f2937] text-white self-start rounded-tl-none'
-                    }`}
-                  >
-                    {msg.text}
+            <ScrollReveal delay={0.3}>
+              <div className="bg-[#0f172a] rounded-[24px] p-6 shadow-soft flex flex-col gap-4">
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0 bg-gray-500">
+                    <Image src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/2f236cae-f369-4b7e-8d1c-2883eb29a59e-superprofile-bio/assets/images/CXqxrKhFb62A1BXDHDfCGaaerFE-14.jpeg" alt="Student" width={40} height={40} className="object-cover" />
                   </div>
-                ))}
+                  <div className="flex-1">
+                    <p className="text-white font-semibold text-sm">Deepak R</p>
+                  </div>
+                  <div className="flex gap-4 text-white/60">
+                    <Video className="h-4 w-4" />
+                    <Phone className="h-4 w-4" />
+                  </div>
+                </div>
+                <div className="flex flex-col gap-3">
+                  {studentExperiences[2].content.map((msg, idx) => (
+                    <div 
+                      key={idx} 
+                      className={`max-w-[85%] rounded-[12px] p-3 text-[13px] leading-tight ${
+                        msg.isSender 
+                          ? 'bg-[#0056e0] text-white self-end rounded-tr-none' 
+                          : 'bg-[#1f2937] text-white self-start rounded-tl-none'
+                      }`}
+                    >
+                      {msg.text}
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
+            </ScrollReveal>
 
-            {/* Review 2 */}
-            <div className="bg-white border border-[#e2e8f0] rounded-[24px] p-8 shadow-soft">
+            <ScrollReveal delay={0.4}>
+              <div className="bg-white border border-[#e2e8f0] rounded-[24px] p-8 shadow-soft">
                 <div className="flex gap-1 mb-4">
                   {[...Array(5)].map((_, i) => (
-                    <span key={i} className="text-[#48bb78]">★</span>
+                    <span key={i} className="text-[#48bb78]">&#9733;</span>
                   ))}
                 </div>
                 <p className="text-[#4A5568] text-[16px] leading-[1.6] mb-6">
-                  &quot;SuperProfile&apos;s locked content feature has been a game-changer for me, enabling me to monetize my YouTube channel and grow my earnings.&quot;
+                  &quot;Edusource HRD Centre provided me with a strong foundation in hospital administration. The government approved certification added real value to my qualification.&quot;
                 </p>
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full overflow-hidden">
-                    <Image src={testimonials[7].avatar!} alt="Kavyal Sedanni" width={40} height={40} className="object-cover" />
+                    <Image src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/2f236cae-f369-4b7e-8d1c-2883eb29a59e-superprofile-bio/assets/images/DNAghrq62kAwheFB0o8xkz36J9c-15.jpeg" alt="Priya N" width={40} height={40} className="object-cover" />
                   </div>
-                  <span className="font-bold text-black text-[16px]">Kavyal Sedanni</span>
+                  <span className="font-bold text-black text-[16px]">Priya N</span>
                 </div>
-            </div>
+              </div>
+            </ScrollReveal>
           </div>
 
         </div>
